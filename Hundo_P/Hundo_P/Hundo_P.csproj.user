@@ -17,6 +17,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <WebStackScaffolding_DbContextTypeFullName>Hundo_P.Models.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

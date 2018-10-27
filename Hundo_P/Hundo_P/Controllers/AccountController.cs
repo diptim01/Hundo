@@ -61,6 +61,13 @@ namespace Hundo_P.Controllers
             return View();
         }
 
+        [AllowAnonymous]
+        public ActionResult NewLogin()
+        {
+
+            return View();
+        }
+
         //
         // POST: /Account/Login
         [HttpPost]
@@ -450,7 +457,7 @@ namespace Hundo_P.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("DailyExecutionModel", "DailyExec");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

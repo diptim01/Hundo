@@ -79,7 +79,7 @@ namespace Hundo_P.Models
             for (int i = interval; i > 0; i--)
             {
                 DateTime dayCount = dateTime.AddDays(-i);
-                DailyExecModel days = db.DailyExecModels.Where(x => x.DateCreated == dayCount).FirstOrDefault();
+                DailyExecModel days = db.DailyExecModels.FirstOrDefault(x => x.DateCreated == dayCount);
 
                 if (days != null && days.PointStoredDaily > 0)
                 {

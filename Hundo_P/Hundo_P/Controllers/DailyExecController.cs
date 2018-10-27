@@ -9,6 +9,8 @@ using System.Web.Mvc;
 
 namespace Hundo_P.Controllers
 {
+
+    [Authorize]
     public class DailyExecController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
