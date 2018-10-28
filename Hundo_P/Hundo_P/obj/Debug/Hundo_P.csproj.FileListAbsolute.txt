@@ -141,7 +141,7 @@ C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Securit
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csprojResolveAssemblyReference.cache
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csprojAssemblyReference.cache
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.emailcorrection.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.IsProductiveColumnAdded.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKaddedForModel.resources
@@ -149,6 +149,8 @@ C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migratio
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKaddedForModel3.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKMadeRequired.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.MODIFYPROD.resources
-C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.GenerateResource.Cache
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.GenerateResource.cache
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.CoreCompileInputs.cache
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.CopyComplete
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.dll
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.pdb

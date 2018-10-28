@@ -213,6 +213,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Hundo_P-20180723122347.mdf" />
+    <Content Include="App_Data\aspnet-Hundo_P-20180723122347_log.ldf">
+      <DependentUpon>aspnet-Hundo_P-20180723122347.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\assets\images\alert\alert.png" />
     <Content Include="Content\assets\images\alert\alert2.png" />
     <Content Include="Content\assets\images\alert\alert3.png" />
@@ -584,9 +588,6 @@
     <Content Include="Content\assets\plugins\styleswitcher\jQuery.style.switcher.js" />
     <Content Include="Content\assets\plugins\summernote\dist\summernote-bs4.css" />
     <Content Include="Content\assets\plugins\summernote\dist\summernote-bs4.min.js" />
-    <Content Include="Content\assets\plugins\sweetalert\jquery.sweet-alert.custom.js" />
-    <Content Include="Content\assets\plugins\sweetalert\sweetalert.css" />
-    <Content Include="Content\assets\plugins\sweetalert\sweetalert.min.js" />
     <Content Include="Content\assets\plugins\switchery\dist\switchery.min.css" />
     <Content Include="Content\assets\plugins\switchery\dist\switchery.min.js" />
     <Content Include="Content\assets\plugins\tablesaw-master\dist\tablesaw-init.js" />
@@ -1040,10 +1041,9 @@
     <Content Include="Views\DailyExec\Index.cshtml" />
     <Content Include="Views\DailyExec\DailyExecutionModel.cshtml" />
     <Content Include="Views\Account\Newlogin.cshtml" />
+    <Content Include="Views\DailyExec\Pageone.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

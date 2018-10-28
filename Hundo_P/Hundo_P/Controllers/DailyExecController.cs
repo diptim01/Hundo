@@ -17,6 +17,8 @@ namespace Hundo_P.Controllers
 
         public ActionResult DailyExecutionModel() { return View(); }
 
+        public ActionResult Pageone() { return View(); }
+
         // POST: DailyExec
         [HttpPost]
         public ActionResult Index(DailyExecModel dailyExecModel)
