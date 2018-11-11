@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using static Hundo_P.Models.QuotesLogic;
 
 namespace Hundo_P.Controllers
 {
 
-    [Authorize]
+    //[Authorize] 
     public class DailyExecController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,6 +20,40 @@ namespace Hundo_P.Controllers
         public ActionResult DailyExecutionModel() { return View(); }
 
         public ActionResult Pageone() { return View(); }
+
+        public ActionResult PageTwo()
+        {
+            return View();
+        }
+
+        public ActionResult FinalPage_3()
+        {
+            return View();
+        }
+
+
+        public async Task<JsonResult> quotesApi()
+        {
+            List<Quotes> tenQuotesApi = await QuotesLogic.GetQuotesAsync();
+            List<QuotesDuplicate> quotesDuplicate = new List<QuotesDuplicate>();
+            int number = 1;
+            foreach (Quotes item in tenQuotesApi)
+            {
+                quotesDuplicate.Add(new QuotesDuplicate()
+                {
+                    Id = number.ToString(),
+                    author = item.author,
+                    category = item.category,
+                    quote =item.quote,
+                }
+                    );
+                number++;
+            }
+
+            return Json(quotesDuplicate, JsonRequestBehavior.AllowGet);
+        }
+
+
 
         // POST: DailyExec
         [HttpPost]
@@ -85,7 +121,7 @@ namespace Hundo_P.Controllers
             {
 
                 DateTime time = dateTime.AddDays(i);
-                var model = db.DailyExecModels.Where(x => DbFunctions.TruncateTime(x.DateCreated) == time).FirstOrDefault();
+                DailyExecModel model = db.DailyExecModels.Where(x => DbFunctions.TruncateTime(x.DateCreated) == time).FirstOrDefault();
                 if (model != null)
                 {
                     DataRow dr = dt.NewRow();
@@ -94,10 +130,10 @@ namespace Hundo_P.Controllers
                     dt.Rows.Add(dr);
                 }
 
-            }  
+            }
 
-           
-         
+
+
             foreach (DataColumn dc in dt.Columns)
             {
                 List<object> x = new List<object>();
@@ -147,6 +183,14 @@ namespace Hundo_P.Controllers
         public ActionResult TestChart()
         {
             return View();
+        }
+
+        public class QuotesDuplicate
+        {
+            public string quote { get; set; }
+            public string author { get; set; }
+            public string category { get; set; }
+            public string Id { get; set; }
         }
     }
 }

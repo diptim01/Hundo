@@ -490,7 +490,7 @@
                        var x = -(162 * (Math.sin(-Math.PI * 2 * (i / 60))));
                        var y = -(162 * (Math.cos(-Math.PI * 2 * (i / 60))));
 
-                       var color = ((this.currentDate.format("m") == i) ? "#fff" : '#000');
+                       var color = ((this.currentDate.format("m") === i) ? "#fff" : '#000');
 
                        var svgMinuteText = this.createSVGElement("text", {'id': 'tm-' + i, 'class': 'dtp-select-minute-text', 'text-anchor': 'middle', 'style': 'cursor:pointer', 'font-weight': 'bold', 'font-size': '20', x: x, y: y + 7, fill: color, 'data-minute': i});
                        svgMinuteText.textContent = i;

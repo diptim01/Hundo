@@ -209,6 +209,7 @@
     <Compile Include="Models\DaysOftheWeek.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\QuotesLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -588,6 +589,9 @@
     <Content Include="Content\assets\plugins\styleswitcher\jQuery.style.switcher.js" />
     <Content Include="Content\assets\plugins\summernote\dist\summernote-bs4.css" />
     <Content Include="Content\assets\plugins\summernote\dist\summernote-bs4.min.js" />
+    <Content Include="Content\assets\plugins\sweetalert\jquery.sweet-alert.custom.js" />
+    <Content Include="Content\assets\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Content\assets\plugins\sweetalert\sweetalert.min.js" />
     <Content Include="Content\assets\plugins\switchery\dist\switchery.min.css" />
     <Content Include="Content\assets\plugins\switchery\dist\switchery.min.js" />
     <Content Include="Content\assets\plugins\tablesaw-master\dist\tablesaw-init.js" />
@@ -894,6 +898,20 @@
     <Content Include="Content\css\icons\weather-icons\fonts\weathericons-regular-webfont.svg" />
     <Content Include="Content\css\spinners.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\Pictures\adult-1850925_960_720.jpg" />
+    <Content Include="Content\Pictures\firefighter-383883_960_720.jpg" />
+    <Content Include="Content\Pictures\jogging-2343558_960_720.jpg" />
+    <Content Include="Content\Pictures\jump-1822412_960_720.jpg" />
+    <Content Include="Content\Pictures\photo-1455849318743-b2233052fcff.jpg" />
+    <Content Include="Content\Pictures\photo-1489533119213-66a5cd877091.jpg" />
+    <Content Include="Content\Pictures\photo-1497005367839-6e852de72767.jpg" />
+    <Content Include="Content\Pictures\photo-1504364269860-8be73aabdff2 %281%29.jpg" />
+    <Content Include="Content\Pictures\photo-1504364269860-8be73aabdff2.jpg" />
+    <Content Include="Content\Pictures\photo-1506485338023-6ce5f36692df.jpg" />
+    <Content Include="Content\Pictures\photo-1506784926709-22f1ec395907.jpg" />
+    <Content Include="Content\Pictures\photo-1519009843775-0105e5e6d92c.jpg" />
+    <Content Include="Content\Pictures\photo-1534196511436-921a4e99f297.jpg" />
+    <Content Include="Content\Pictures\woman-865021_960_720.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -997,8 +1015,10 @@
     <Content Include="Scripts\js\widget-charts.js" />
     <Content Include="Scripts\js\widget-data.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\regscript.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\typedminjs.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1042,6 +1062,9 @@
     <Content Include="Views\DailyExec\DailyExecutionModel.cshtml" />
     <Content Include="Views\Account\Newlogin.cshtml" />
     <Content Include="Views\DailyExec\Pageone.cshtml" />
+    <Content Include="Views\DailyExec\PageTwo.cshtml" />
+    <Content Include="Views\DailyExec\FinalPage_3.cshtml" />
+    <Content Include="Views\Account\newReg.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

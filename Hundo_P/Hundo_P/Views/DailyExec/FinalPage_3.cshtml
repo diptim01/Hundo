@@ -1,0 +1,169 @@
+﻿@model IEnumerable<Hundo_P.Models.QuotesLogic.Quotes>
+
+@{
+    /**/
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PageTwo</title>
+    <link href="~/Content/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="~/Content/css/colors/blue.css" id="theme" rel="stylesheet">
+    <style>
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .left {
+            left: 0;
+            background-color: #111;
+        }
+
+        .right {
+            right: 0;
+            background-color: white;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            overflow-y: hidden;
+        }
+
+            .centered img {
+                width: 1355px; /* you can use % */
+                height: auto;
+            }
+
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid green;
+            border-bottom: 16px solid green;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        
+        }
+
+        @@-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="split left"  style="overflow: hidden;">
+                    <div class="centered">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="" src="~/Content/Pictures/firefighter-383883_960_720.jpg" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Pictures/photo-1455849318743-b2233052fcff.jpg" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Pictures/jogging-2343558_960_720.jpg" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Pictures/photo-1519009843775-0105e5e6d92c.jpg" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Pictures/photo-1534196511436-921a4e99f297.jpg" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Pictures/woman-865021_960_720.jpg" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Pictures/jump-1822412_960_720.jpg" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Content/Pictures/photo-1497005367839-6e852de72767.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split right">
+
+                    <div class="centered" style="overflow: hidden;">
+                        <h1 id="hero" class="loader"></h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/typed.js/1.1.4/typed.min.js"></script>
+    <script src="~/Content/assets/plugins/popper/popper.min.js"></script>
+    <script src="~/Content/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+              $.ajax({
+        type: "GET",
+        url: '@Url.Action("quotesApi", "DailyExec")', // do not hard code your url's
+        datatype: "json", // refer notes below
+                  success: function (data) {
+                      var id = [];
+                      for (var i in data) {
+                          id.push(data[i].quote);
+
+                      }
+                      $("#hero").removeClass('loader');
+                      $("#hero").typed({
+                          strings: [id[0], id[1], id[2], id[3], id[4], id[5], id[6],id[7],id[8],id[9]],
+                          typeSpeed: 90, // typing speed
+                          backDelay: 200, // pause before backspacing
+                          loop: true,
+                          showCursor: true
+                       });
+
+        }
+    });
+
+        });
+    </script>
+</body>
+
+
+</html>
