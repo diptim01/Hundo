@@ -66,25 +66,20 @@
           register.parentElement.appendChild(h1);
           setTimeout(function () { h1.style.opacity = 1 }, 50);
       }, eTime);
-      alert(JSON.stringify(questions));
+ 
       var que = JSON.stringify(questions);
-      alert(que);
-      //   alert(questions[2].value);
+  
       $.ajax({
           type: "POST",
           url: '/Account/RegisterData',
-          data: { incoming: que },
-          
+          data: { incoming: que },          
           dataType: 'Json',
-          success: function (e) {
-              alert("khhjds");
+          success: function (e) {           
               window.location.href = '/DailyExec/Pageone/';
           },
           error: function (e) {
-              alert("error!");
+              alert("error!: " + e);
           }
-
-
       });
   }
 

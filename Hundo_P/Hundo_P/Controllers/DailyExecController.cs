@@ -12,7 +12,7 @@ using static Hundo_P.Models.QuotesLogic;
 namespace Hundo_P.Controllers
 {
 
-    //[Authorize] 
+    [Authorize] 
     public class DailyExecController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -57,7 +57,7 @@ namespace Hundo_P.Controllers
 
         // POST: DailyExec
         [HttpPost]
-        public ActionResult Index(DailyExecModel dailyExecModel)
+        public ActionResult Pageone(DailyExecModel dailyExecModel)
         {
             //dailyExecModel.ProductivityInPercent = dailyExecModel.ConfirmProductivity(dailyExecModel.TimeSpent);
             if (!string.IsNullOrEmpty(dailyExecModel.DailySummary))

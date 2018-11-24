@@ -38,12 +38,12 @@ namespace Hundo_P.Controllers
             get => _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             private set => _userManager = value;
         }
-
         //
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -69,7 +69,10 @@ namespace Hundo_P.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            SignInStatus result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            SignInStatus result =
+                await
+                    SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe,
+                        shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -114,7 +117,10 @@ namespace Hundo_P.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            SignInStatus result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
+            SignInStatus result =
+                await
+                    SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe,
+                        rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -137,84 +143,79 @@ namespace Hundo_P.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult newReg()
+        public ActionResult NewReg()
         {
             return View();
         }
 
         [AllowAnonymous]
+        [HttpPost]
         public async Task<JsonResult> RegisterData(string incoming)
         {
-            List<RegisterDetails> registerDetails = new List<RegisterDetails>();
+            JsonResult resultMsg = new JsonResult();
+            List<newHelpermethod.RegisterDetails> newRegisterDetails = new List<newHelpermethod.RegisterDetails>();
             if (incoming != null)
             {
-                registerDetails = JsonConvert.DeserializeObject<List<RegisterDetails>>(incoming);
+                newRegisterDetails = JsonConvert.DeserializeObject<List<newHelpermethod.RegisterDetails>>(incoming);
 
-                UserInfo user = new UserInfo
+            newHelpermethod.UserInfo userInfo = new newHelpermethod.UserInfo()
                 {
-                    FullName = registerDetails[0].value + registerDetails[1].value,
-                    Email = registerDetails[2].value,
-                    Password = registerDetails[3].value
+                    FullName = newRegisterDetails[0].value + newRegisterDetails[1].value,
+                    Email = newRegisterDetails[2].value,
+                    Password = newRegisterDetails[3].value
                 };
-                               
-                ApplicationUser newUser = new ApplicationUser { UserName = user.FullName, Email = user.Email };
-                IdentityResult result = await UserManager.CreateAsync(newUser, user.Password);
-                if (result.Succeeded)
+
+                ApplicationUser newUser = new ApplicationUser { UserName = userInfo.FullName, Email = userInfo.Email };
+                IdentityResult result2 = await UserManager.CreateAsync(newUser, userInfo.Password);
+                if (result2.Succeeded)
                 {
-                    IdentityResult response = UserManager.AddToRole("1", "Free");
+                    IdentityResult response2 = UserManager.AddToRole(newUser.Id, "Free");
                     await SignInManager.SignInAsync(newUser, isPersistent: false, rememberBrowser: false);
+                    return Json(newRegisterDetails, JsonRequestBehavior.AllowGet);
                 }
-                AddErrors(result);
-            }
 
-            return Json(registerDetails, JsonRequestBehavior.AllowGet);
-        }
-
-
-        public class RegisterDetails
-        {
-            public string question { get; set; }
-            public string value { get; set; }
-
-        }
-
-        public class UserInfo
-        {
-            public string FullName { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
-
-        }
-        //
-        // POST: /Account/Register
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                ApplicationUser user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                foreach (string error in result2.Errors)
                 {
-                    IdentityResult response = UserManager.AddToRole(user.Id, "Free");
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
-                }
-                AddErrors(result);
+                    resultMsg.Data = new { errorMessage = error, Success = false };
+                    resultMsg.JsonRequestBehavior = JsonRequestBehavior.DenyGet;
+                };
+                // AddErrors(result);
             }
-
-            // If we got this far, something failed, redisplay form
-            return View(model);
+            return Json(resultMsg, JsonRequestBehavior.DenyGet);
         }
+
+
+
+        //
+        //// POST: /Account/Register
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Register(RegisterViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        ApplicationUser user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+        //        IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+        //        if (result.Succeeded)
+        //        {
+        //            IdentityResult response = UserManager.AddToRole(user.Id, "Free");
+        //            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+        //            // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+        //            // Send an email with this link
+        //            // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+        //            // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+        //            // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+        //            return RedirectToAction("Index", "Home");
+        //        }
+        //        AddErrors(result);
+        //    }
+
+        //    // If we got this far, something failed, redisplay form
+        //    return View(model);
+        //}
 
         //
         // GET: /Account/ConfirmEmail
@@ -323,7 +324,8 @@ namespace Hundo_P.Controllers
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider
-            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+            return new ChallengeResult(provider,
+                Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
         //
@@ -337,8 +339,10 @@ namespace Hundo_P.Controllers
                 return View("Error");
             }
             IList<string> userFactors = await UserManager.GetValidTwoFactorProvidersAsync(userId);
-            List<SelectListItem> factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
-            return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
+            List<SelectListItem> factorOptions =
+                userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
+            return
+                View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
         //
@@ -358,7 +362,8 @@ namespace Hundo_P.Controllers
             {
                 return View("Error");
             }
-            return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+            return RedirectToAction("VerifyCode",
+                new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
         //
@@ -387,7 +392,8 @@ namespace Hundo_P.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    return View("ExternalLoginConfirmation",
+                        new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
 
@@ -396,7 +402,8 @@ namespace Hundo_P.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model,
+            string returnUrl)
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -468,6 +475,7 @@ namespace Hundo_P.Controllers
         }
 
         #region Helpers
+
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -518,6 +526,7 @@ namespace Hundo_P.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
         }
+
         #endregion
     }
 }

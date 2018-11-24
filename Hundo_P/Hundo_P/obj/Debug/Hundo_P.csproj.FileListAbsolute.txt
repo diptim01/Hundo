@@ -1,80 +1,3 @@
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\csc.exe
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\vbc.exe
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\VBCSCompiler.exe
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Hundo_P.dll.config
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Hundo_P.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Hundo_P.pdb
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Antlr3.Runtime.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\EntityFramework.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\EntityFramework.SqlServer.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Newtonsoft.Json.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Owin.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Helpers.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Mvc.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Optimization.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Razor.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.WebPages.Deployment.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.WebPages.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.WebPages.Razor.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\WebGrease.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Helpers.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Mvc.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Optimization.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.Razor.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.WebPages.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.WebPages.Deployment.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\System.Web.WebPages.Razor.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Antlr3.Runtime.pdb
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Newtonsoft.Json.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\EntityFramework.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\EntityFramework.SqlServer.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.dll
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.pdb
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.emailcorrection.resources
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.GenerateResource.cache
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.IsProductiveColumnAdded.resources
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKaddedForModel.resources
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKaddedForModel2.resources
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKaddedForModel3.resources
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKMadeRequired.resources
-C:\Users\DiPtim pc\Documents\Visual Studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.MODIFYPROD.resources
-C:\Users\DiPtim pc\documents\visual studio 2015\Projects\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csprojResolveAssemblyReference.cache
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.emailcorrection.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.IsProductiveColumnAdded.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKaddedForModel.resources
@@ -82,5 +5,88 @@ C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migratio
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKaddedForModel3.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FKMadeRequired.resources
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.MODIFYPROD.resources
-C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.GenerateResource.cache
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.GenerateResource.Cache
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.CoreCompileInputs.cache
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Hundo_P.dll.config
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Hundo_P.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Hundo_P.pdb
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\csc.exe
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\csc.exe.config
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\csc.rsp
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\csi.exe
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\csi.rsp
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\System.AppContext.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\vbc.exe
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\vbc.exe.config
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\vbc.rsp
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\VBCSCompiler.exe
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Antlr3.Runtime.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\EntityFramework.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\EntityFramework.SqlServer.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Newtonsoft.Json.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Owin.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Helpers.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Mvc.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Optimization.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Razor.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.WebPages.Deployment.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.WebPages.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.WebPages.Razor.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\WebGrease.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Helpers.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Mvc.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Optimization.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.Razor.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.WebPages.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.WebPages.Deployment.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\System.Web.WebPages.Razor.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Antlr3.Runtime.pdb
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Newtonsoft.Json.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\EntityFramework.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\EntityFramework.SqlServer.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.CopyComplete
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.dll
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.pdb
