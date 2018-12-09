@@ -992,6 +992,7 @@
     <Content Include="Content\assets\plugins\summernote\dist\font\summernote9d3d.ttf" />
     <Content Include="Content\assets\plugins\summernote\dist\font\summernote9d3d.woff" />
     <Content Include="Content\assets\plugins\summernote\dist\font\summernoted41d.eot" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
