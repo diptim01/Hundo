@@ -7,7 +7,7 @@ namespace Hundo_P.Core
 {
     public interface IUnitOfWork : IDisposable
     {
-        IDailyExecution Daily { get;  }
+        IDailyExecution DailyExecution { get;  }
         int Complete();
     }
 }
