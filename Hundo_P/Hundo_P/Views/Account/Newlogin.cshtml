@@ -45,7 +45,7 @@
         <div class="login-box card">
         
             <div class="card-body">
-                <form class="form-horizontal form-material" method="POST" action="@Url.Action("Login", "Account")">
+                <form class="form-horizontal form-material" method="POST" action="@Url.Action("NewLogin", "Account")">
                     @Html.AntiForgeryToken()
                     <a href="javascript:void(0)" class="text-center db"><img src="~/Content/assets/images/logo-icon.png" alt="Home"/><br/><img src="~/Content/assets/images/logo-text.png" alt="Home"/></a>
                     <div class="form-group m-t-40">
@@ -75,6 +75,9 @@
                             <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
                         </div>
                     </div>
+            
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
                             <div class="social">
@@ -85,7 +88,7 @@
                     </div>
                     <div class="form-group m-b-0">
                         <div class="col-sm-12 text-center">
-                            Don't have an account? <a href="pages-register2.html" class="text-primary m-l-5"><b>Sign Up</b></a>
+                            Don't have an account? <a href="../Account/newReg" class="text-primary m-l-5"><b>Sign Up</b></a>
                         </div>
                     </div>
                 </form>
