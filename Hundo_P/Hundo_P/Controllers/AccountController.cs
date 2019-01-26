@@ -29,12 +29,21 @@ namespace Hundo_P.Controllers
 
         public ApplicationSignInManager SignInManager
         {
+            //get { return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>(); }
+
+            //private set { _signInManager = value; }
+
             get => _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             private set => _signInManager = value;
         }
 
         public ApplicationUserManager UserManager
         {
+            //get { return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>(); }
+
+            //private set { _userManager = value; }
+
+
             get => _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             private set => _userManager = value;
         }
@@ -495,7 +504,7 @@ namespace Hundo_P.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("DailyExecutionModel", "DailyExec");
+            return RedirectToAction("Pageone", "DailyExec");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

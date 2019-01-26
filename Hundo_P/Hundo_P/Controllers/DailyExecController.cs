@@ -34,10 +34,10 @@ namespace Hundo_P.Controllers
 
         public async Task<JsonResult> quotesApi()
         {
-            List<Quotes> tenQuotesApi = await QuotesLogic.GetQuotesAsync();
+            List<QuotesLogic.Quotes> tenQuotesApi = await QuotesLogic.GetQuotesAsync();
             List<QuotesDuplicate> quotesDuplicate = new List<QuotesDuplicate>();
             int number = 1;
-            foreach (Quotes item in tenQuotesApi)
+            foreach (QuotesLogic.Quotes item in tenQuotesApi)
             {
                 quotesDuplicate.Add(new QuotesDuplicate()
                 {

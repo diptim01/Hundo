@@ -61,7 +61,7 @@
                         <div class="card-body box-effect" >
                             <h4 class="card-title">Hundo-P Start page</h4>
                             <h6 class="card-subtitle">Make today exceptional</h6>
-                            <form class="floating-labels m-t-40" action="@Url.Action("","")" method="post">
+                            <form class="floating-labels m-t-40" action="@Url.Action("Pageone","DailyExec")" method="post">
 
                                 <div class="form-group m-b-40 focused">
                                     <input type="text" disabled class="form-control" id="input2">
@@ -70,19 +70,19 @@
                                 </div>
 
                                 <div class="form-group m-b-40 focused">
-                                    <input type="text" class="form-control" id="input1">
+                                    <input type="text" class="form-control" name="DailyTheme" id="input1">
                                     <span class="bar"></span>
                                     <label for="input1">Create a theme for the day</label>
                                 </div>
 
 
                                 <div class="form-group m-b-5">
-                                    <textarea class="form-control" rows="4" id="input7"></textarea>
+                                    <textarea class="form-control" rows="4" id="input7" name="DailySummary"></textarea>
                                     <span class="bar"></span>
                                     <label for="input7">Write more about the task (optional)</label>
                                 </div>
                                 <div style="margin-top:30px;">
-                                    <button type="button" class="btn btn-info btn-circle btn-xl" id="sa-success"><i class="fa fa-check"></i> </button><span style="margin-left:10px;">Submit</span>
+                                    <button type="submit" class="btn btn-info btn-circle btn-xl" id="sa-success"><i class="fa fa-check"></i> </button><span style="margin-left:10px;">Submit</span>
                                     <button style="margin-left:10px;" type="button" class="btn btn-danger btn-circle btn-xl"><i class="fa fa-times"></i> </button><span style="margin-left:10px;">Cancel</span>
                                 </div>
                             </form>

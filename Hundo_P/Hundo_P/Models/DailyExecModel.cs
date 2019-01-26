@@ -20,6 +20,8 @@ namespace Hundo_P.Models
 
         public DateTime DateCreated { get; set; }
 
+        public string DailyTheme { get; set; }
+
         public int PointStoredDaily { get; set; }
 
         [Required]
