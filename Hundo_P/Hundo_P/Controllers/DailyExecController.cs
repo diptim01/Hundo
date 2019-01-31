@@ -82,6 +82,19 @@ namespace Hundo_P.Controllers
 
             return View();
         }
+        
+        [HttpPost]
+        public ActionResult PageTwo(int? id)
+        {
+        if (!id.HasValue)
+        {
+             return View("An error occured with the Id Passed to the server....")
+        }
+        
+        taskModel = db.dailyExecModel.find(id);        
+        
+        return RedirectToView("Dashboard");
+        }
 
         public ActionResult getDailyInput()
         {
