@@ -23,7 +23,10 @@ namespace Hundo_P.Controllers
 
         public ActionResult PageTwo()
         {
-            return View();
+            //Temporal means of getting User id instead of Session in the Login page
+            var userId = User.Identity.GetUserId();
+            var userDailyProfile = db.DailyExecModels.Where(app => app.ApplicationUser_Id == userId).AsEnumerable();
+            return View(userDailyProfile);
         }
 
         public ActionResult FinalPage_3()

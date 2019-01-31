@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Hundo_P.Models.DailyExecModel>
 @{
     Layout = null;
 }
@@ -18,7 +18,7 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <button class="float-right btn btn-sm btn-rounded btn-success" data-toggle="modal" data-target="#myModal">Add Task</button>
+                
                 <h4 class="card-title">To Do list</h4>
                 <h6 class="card-subtitle">List of your next task to complete</h6>
                 <!-- ============================================================== -->
@@ -33,93 +33,99 @@
                                     <h4 class="modal-title">Task Completed!</h4>
                                     <button type="button" class="close closemodal" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                                 </div>
-                                <div class="modal-body">
-                                    <form>
+                                <form action="@Url.Action("PageTwo","sss")" method="post">
+                                    <div class="modal-body">
+
                                         <p>Good Work! You completed the task for the day. Kindly take  a few seconds to write how the experience was like for you.</p>
                                         <div class="form-group">
                                             <label>Task name</label>
-                                            <input type="text" class="form-control" disabled placeholder="Enter Task Name">
+                                            <input type="text" class="form-control" id="summaryname" disabled placeholder="Enter Task Name">
                                         </div>
                                         <div class="form-group">
                                             <label>How I felt about the task</label>
                                             <textarea class="form-control" placeholder="I ..."></textarea>
                                         </div>
                                         <i>Remember each day counts towards victory when you fight to succeed on it.</i>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary closemodal" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
-                                </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary closemodal" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </form>
                             </div>
                             <!-- /.modal-content -->
                         </div>
                         <!-- /.modal-dialog -->
                     </div>
                     <!-- /.modal -->
-                    <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
-                        <li class="list-group-item" data-role="task">
-                            <div class="checkbox checkbox-info">
-                                <input type="checkbox" id="inputSchedule" name="inputCheckboxesSchedule">
-                                <label for="inputSchedule" class=""> <span>Schedule meeting with</span> </label>
-                            </div>
-                            <ul class="assignedto">
-                                <li><img src="../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
-                                <li><img src="../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
-                                <li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" data-role="task">
-                            <div class="checkbox checkbox-info">
-                                <input type="checkbox" id="inputCall" name="inputCheckboxesCall">
-                                <label for="inputCall" class=""> <span>Give Purchase report to</span> <span class="label label-danger">Today</span> </label>
-                            </div>
-                            <ul class="assignedto">
-                                <li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item" data-role="task">
-                            <div class="checkbox checkbox-info">
-                                <input type="checkbox" id="inputBook" name="inputCheckboxesBook">
-                                <label for="inputBook" class=""> <span>Book flight for holiday</span> </label>
-                            </div>
-                            <div class="item-date"> 26 jun 2017</div>
-                        </li>
-                        <li class="list-group-item" data-role="task">
-                            <div class="checkbox checkbox-info">
-                                <input type="checkbox" id="inputForward" name="inputCheckboxesForward">
-                                <label for="inputForward" class="toremove"> <span>Forward all tasks</span> <span class="label label-warning">2 weeks</span> </label>
-                            </div>
-                            <div class="item-date"> 26 jun 2017</div>
-                        </li>
-                        <li class="list-group-item" data-role="task">
-                            <div class="checkbox checkbox-info">
-                                <input type="checkbox" id="inputRecieve" name="inputCheckboxesRecieve">
-                                <label for="inputRecieve" class=""> <span>Recieve shipment</span> </label>
-                            </div>
-                            <div class="item-date"> 26 jun 2017</div>
-                        </li>
-                        <li class="list-group-item" data-role="task">
-                            <div class="checkbox checkbox-info">
-                                <input type="checkbox" id="inputpayment" name="inputCheckboxespayment">
-                                <label for="inputpayment" class=""> <span>Send payment today</span> </label>
-                            </div>
-                            <div class="item-date"> 26 jun 2017</div>
-                        </li>
-                        <li class="list-group-item" data-role="task">
-                            <div class="checkbox checkbox-info">
-                                <input type="checkbox" id="inputForward2" name="inputCheckboxesd">
-                                <label for="inputForward2" class=""> <span>Important tasks</span> <span class="label label-success">2 weeks</span> </label>
-                            </div>
-                            <ul class="assignedto">
-                                <li><img src="../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Steave"></li>
-                                <li><img src="../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Jessica"></li>
-                                <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Selina"></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    @foreach (var item in Model.OrderByDescending(x => x.DateCreated))
+                    {
+                        <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
+                            <li class="list-group-item" data-role="task">
+                                <div class="checkbox checkbox-info">
+                                    <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-summary="@item.DailyTheme">
+                                    <label for="@item.DailyExecModelId" class="toremove"> <span>@item.DailyTheme</span> <span class="label label-danger">Today</span> </label>
+                                </div>
+                                <div class="item-date">@item.DailyTheme.AsDateTime().ToShortDateString()</div>
+                            </li>
+
+
+
+                            @*<li class="list-group-item" data-role="task">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" id="inputSchedule" name="inputCheckboxesSchedule">
+                                        <label for="inputSchedule" class=""> <span>Schedule meeting with</span> </label>
+                                    </div>
+                                    <ul class="assignedto">
+                                        <li><img src="../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
+                                        <li><img src="../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
+                                        <li><img src="../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
+                                        <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                                    </ul>
+                                </li>
+
+                                <li class="list-group-item" data-role="task">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" id="inputBook" name="inputCheckboxesBook">
+                                        <label for="inputBook" class=""> <span>Book flight for holiday</span> </label>
+                                    </div>
+                                    <div class="item-date"> 26 jun 2017</div>
+                                </li>
+                                <li class="list-group-item" data-role="task">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" id="inputForward" name="inputCheckboxesForward">
+                                        <label for="inputForward" class="toremove"> <span>Forward all tasks</span> <span class="label label-warning">2 weeks</span> </label>
+                                    </div>
+                                    <div class="item-date"> 26 jun 2017</div>
+                                </li>
+                                <li class="list-group-item" data-role="task">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" id="inputRecieve" name="inputCheckboxesRecieve">
+                                        <label for="inputRecieve" class=""> <span>Recieve shipment</span> </label>
+                                    </div>
+                                    <div class="item-date"> 26 jun 2017</div>
+                                </li>
+                                <li class="list-group-item" data-role="task">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" id="inputpayment" name="inputCheckboxespayment">
+                                        <label for="inputpayment" class=""> <span>Send payment today</span> </label>
+                                    </div>
+                                    <div class="item-date"> 26 jun 2017</div>
+                                </li>
+                                <li class="list-group-item" data-role="task">
+                                    <div class="checkbox checkbox-info">
+                                        <input type="checkbox" id="inputForward2" name="inputCheckboxesd">
+                                        <label for="inputForward2" class=""> <span>Important tasks</span> <span class="label label-success">2 weeks</span> </label>
+                                    </div>
+                                    <ul class="assignedto">
+                                        <li><img src="../assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Steave"></li>
+                                        <li><img src="../assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Jessica"></li>
+                                        <li><img src="../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Assign to Selina"></li>
+                                    </ul>
+                                </li>*@
+                        </ul>
+                    }
                 </div>
             </div>
         </div>
@@ -147,19 +153,27 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#inputForward").on('change', function () { // on change of state
-                if (this.checked) // if changed state is "CHECKED"
-                {
-                    $('#myModal').modal();// do the magic here
-                }
+            //$(".getTicked").on('change', function () {
+            //    if (this.checked) // if changed state is "CHECKED"
+            //    {
+            //        $('#myModal').modal();// do the magic here
+            //    }
+            //});
+
+            $(".getTicked").change(function () { // on change of state
+                //data-summary
+                var summarytask = $(this).data('summary');      
+           
+                $('#summaryname').val(summarytask);
+                $('#myModal').modal();// do the magic here
             });
 
 
             $(".closemodal").on('click', function () {
-                $("#inputForward").prop('checked', false);
+                $(".getTicked").prop('checked', false);
                 $(".toremove").removeClass('task-done');
             });
-          
+
         });
     </script>
 </body>
