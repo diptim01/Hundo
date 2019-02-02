@@ -21,12 +21,19 @@
 
         //A title with a text under
         $('#sa-title').click(function () {
-            swal("Here's a message!", "Lokayyyyyy")
+            swal("Here's a message!", "Lokayyyyyy");
         });
 
         //Success Message
         $('#sa-success').click(function () {
-            swal("Task Recorded!", "Kindly come back on or before 24 hours to close this pending task", "success")
+            var hourlyTime = document.getElementById('timeSpent');
+            hourlyTime = hourlyTime.options[hourlyTime.selectedIndex].value;
+
+            if (hourlyTime === null || hourlyTime === false) {
+                alert("Time is not selected");
+                return false;
+            }
+            swal("Task Recorded!", "Kindly come back on or before " + hourlyTime + " " + "hours to close this pending task", "success");
         });
 
         //Warning Message

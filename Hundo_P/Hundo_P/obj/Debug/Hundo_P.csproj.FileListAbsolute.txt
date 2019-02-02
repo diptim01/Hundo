@@ -92,3 +92,5 @@ C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.pdb
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csprojAssemblyReference.cache
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.CoreCompileInputs.cache
 C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.csproj.CopyComplete
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FinalCommentInclusion.resources
+C:\Users\DiPtim pc\Source\Repos\Hundo\Hundo_P\Hundo_P\obj\Debug\Hundo_P.Migrations.FinalCommentInclusionnullable.resources

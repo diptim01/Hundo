@@ -211,6 +211,14 @@
     <Compile Include="Migrations\201901261401070_Dailythemeadded.Designer.cs">
       <DependentUpon>201901261401070_Dailythemeadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902021032419_FinalCommentInclusion.cs" />
+    <Compile Include="Migrations\201902021032419_FinalCommentInclusion.Designer.cs">
+      <DependentUpon>201902021032419_FinalCommentInclusion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902021040126_FinalCommentInclusionnullable.cs" />
+    <Compile Include="Migrations\201902021040126_FinalCommentInclusionnullable.Designer.cs">
+      <DependentUpon>201902021040126_FinalCommentInclusionnullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DailyExecModel.cs" />
@@ -1122,6 +1130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901261401070_Dailythemeadded.resx">
       <DependentUpon>201901261401070_Dailythemeadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902021032419_FinalCommentInclusion.resx">
+      <DependentUpon>201902021032419_FinalCommentInclusion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902021040126_FinalCommentInclusionnullable.resx">
+      <DependentUpon>201902021040126_FinalCommentInclusionnullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

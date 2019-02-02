@@ -7,12 +7,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using static Hundo_P.Models.QuotesLogic;
 
 namespace Hundo_P.Controllers
 {
 
-    [Authorize] 
+    [Authorize]
     public class DailyExecController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -23,9 +22,21 @@ namespace Hundo_P.Controllers
 
         public ActionResult PageTwo()
         {
+            //check the date         
+ 
             //Temporal means of getting User id instead of Session in the Login page
-            var userId = User.Identity.GetUserId();
-            var userDailyProfile = db.DailyExecModels.Where(app => app.ApplicationUser_Id == userId).AsEnumerable();
+            string userId = User.Identity.GetUserId();
+            IEnumerable<DailyExecModel> userDailyProfile = db.DailyExecModels.Where(app => app.ApplicationUser_Id == userId).AsEnumerable();
+
+
+            //compare the prev and current date
+
+            var usedTiming = userDailyProfile.Select(x => x.TimeSpent).FirstOrDefault();
+            //if (usedTiming.CompareTo(DateTime.Now))
+            //{
+
+            //}
+
             return View(userDailyProfile);
         }
 
@@ -47,7 +58,7 @@ namespace Hundo_P.Controllers
                     Id = number.ToString(),
                     author = item.author,
                     category = item.category,
-                    quote =item.quote,
+                    quote = item.quote,
                 }
                     );
                 number++;
@@ -63,6 +74,10 @@ namespace Hundo_P.Controllers
         public ActionResult Pageone(DailyExecModel dailyExecModel)
         {
             //dailyExecModel.ProductivityInPercent = dailyExecModel.ConfirmProductivity(dailyExecModel.TimeSpent);
+            if (string.IsNullOrEmpty(dailyExecModel.DailyTheme))
+            {
+                return View();
+            }
             if (!string.IsNullOrEmpty(dailyExecModel.DailySummary))
             {
 
@@ -82,18 +97,23 @@ namespace Hundo_P.Controllers
 
             return View();
         }
-        
+
         [HttpPost]
-        public ActionResult PageTwo(int? id)
+        public ActionResult PageTwo(int? id, string finalComment)
         {
-        if (!id.HasValue)
-        {
-             return View("An error occured with the Id Passed to the server....")
-        }
-        
-        taskModel = db.dailyExecModel.find(id);        
-        
-        return RedirectToView("Dashboard");
+            if (!id.HasValue)
+                return View("An error occured with the Id Passed to the server....");
+
+            DailyExecModel taskModel = db.DailyExecModels.Find(id);
+
+            taskModel.FinalComment = finalComment;
+            taskModel.TimeOfCompletion = DateTime.Now;
+
+            db.DailyExecModels.Add(taskModel);
+
+            db.SaveChanges();
+
+            return RedirectToAction("DailyExecutionModel");
         }
 
         public ActionResult getDailyInput()

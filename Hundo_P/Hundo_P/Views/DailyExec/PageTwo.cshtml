@@ -33,17 +33,18 @@
                                     <h4 class="modal-title">Task Completed!</h4>
                                     <button type="button" class="close closemodal" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                                 </div>
-                                <form action="@Url.Action("PageTwo","sss")" method="post">
+                                <form action="@Url.Action("PageTwo","DailyExec")" method="post">
                                     <div class="modal-body">
 
                                         <p>Good Work! You completed the task for the day. Kindly take  a few seconds to write how the experience was like for you.</p>
+                                        <div> <input hidden name="id" id="uniqueId" value="uniqueId"/></div>
                                         <div class="form-group">
                                             <label>Task name</label>
                                             <input type="text" class="form-control" id="summaryname" disabled placeholder="Enter Task Name">
                                         </div>
                                         <div class="form-group">
                                             <label>How I felt about the task</label>
-                                            <textarea class="form-control" placeholder="I ..."></textarea>
+                                            <textarea class="form-control" name="finalComment" placeholder="I ..."></textarea>
                                         </div>
                                         <i>Remember each day counts towards victory when you fight to succeed on it.</i>
 
@@ -64,7 +65,7 @@
                         <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
                             <li class="list-group-item" data-role="task">
                                 <div class="checkbox checkbox-info">
-                                    <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-summary="@item.DailyTheme">
+                                    <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-id="@item.DailyExecModelId" data-summary="@item.DailyTheme">
                                     <label for="@item.DailyExecModelId" class="toremove"> <span>@item.DailyTheme</span> <span class="label label-danger">Today</span> </label>
                                 </div>
                                 <div class="item-date">@item.DailyTheme.AsDateTime().ToShortDateString()</div>
@@ -163,7 +164,9 @@
             $(".getTicked").change(function () { // on change of state
                 //data-summary
                 var summarytask = $(this).data('summary');      
-           
+                var uniqueId = $(this).data('id');
+
+                $('#uniqueId').val(uniqueId);
                 $('#summaryname').val(summarytask);
                 $('#myModal').modal();// do the magic here
             });

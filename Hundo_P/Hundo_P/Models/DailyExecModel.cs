@@ -24,6 +24,10 @@ namespace Hundo_P.Models
 
         public int PointStoredDaily { get; set; }
 
+        public string FinalComment { get; set; }
+
+        public DateTime? TimeOfCompletion { get; set; }
+
         [Required]
         [ForeignKey("ApplicationUser")]
         public string ApplicationUser_Id { get; set; }
