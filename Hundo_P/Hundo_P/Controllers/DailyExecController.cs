@@ -1,4 +1,5 @@
 ﻿using Hundo_P.Models;
+using Hundo_P.Vmodels;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -28,16 +29,39 @@ namespace Hundo_P.Controllers
             string userId = User.Identity.GetUserId();
             IEnumerable<DailyExecModel> userDailyProfile = db.DailyExecModels.Where(app => app.ApplicationUser_Id == userId).AsEnumerable();
 
+            List<DailyExecVM> dailyExecVMs = ConvertToViewModels(userDailyProfile);
 
-            //compare the prev and current date
+            List<string> results = new List<string>();
 
-            var usedTiming = userDailyProfile.Select(x => x.TimeSpent).FirstOrDefault();
-            //if (usedTiming.CompareTo(DateTime.Now))
-            //{
-
-            //}
-
+            results = GetDateResults(userDailyProfile);
+         
+            
             return View(userDailyProfile);
+        }
+
+        private List<DailyExecVM> ConvertToViewModels(IEnumerable<DailyExecModel> userDailyProfile)
+        {
+            throw new NotImplementedException();
+        }
+
+        private List<string> GetDateResults(IEnumerable<DailyExecModel> userDailyProfile)
+        {
+            List<string> results = new List<String>();
+            foreach (var item in userDailyProfile)
+            {
+                //compare the prev and current date
+                var result = DateTime.Compare(item.DateCreated, DateTime.Now);
+                //}
+                if (result < 0)
+                    results.Add("is earlier than");
+                else if (result == 0)
+                    relationship = "is the same time as";
+                else
+                    relationship = "is later than";
+            }
+
+            return results;
+
         }
 
         public ActionResult FinalPage_3()
@@ -86,7 +110,7 @@ namespace Hundo_P.Controllers
                 dailyExecModel.PointStoredDaily = dailyExecModel.GetStoredDailyPoints(dailyExecModel.DateCreated);
 
                 dailyExecModel.DayOfTheWeek = DateTime.Now.DayOfWeek.ToString();
-
+                
                 dailyExecModel.ApplicationUser_Id = User.Identity.GetUserId();
 
                 db.DailyExecModels.Add(dailyExecModel);
