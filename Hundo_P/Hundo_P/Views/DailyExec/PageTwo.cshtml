@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Hundo_P.Models.DailyExecModel>
+﻿@model IEnumerable<Hundo_P.Vmodels.DailyExecVM>
 @{
     Layout = null;
 }
@@ -66,9 +66,9 @@
                             <li class="list-group-item" data-role="task">
                                 <div class="checkbox checkbox-info">
                                     <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-id="@item.DailyExecModelId" data-summary="@item.DailyTheme">
-                                    <label for="@item.DailyExecModelId" class="toremove"> <span>@item.DailyTheme</span> <span class="label label-danger">Today</span> </label>
+                                    <label for="@item.DailyExecModelId" class="toremove"> <span>@item.DailyTheme</span> <span class="label label-danger">@item.DateComment</span> </label>
                                 </div>
-                                <div class="item-date">@item.DailyTheme.AsDateTime().ToShortDateString()</div>
+                                <div class="item-date">@item.DateCreated.ToShortDateString()</div>
                             </li>
 
 

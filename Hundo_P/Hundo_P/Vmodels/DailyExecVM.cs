@@ -26,5 +26,7 @@ namespace Hundo_P.Vmodels
         public string FinalComment { get; set; }
 
         public DateTime? TimeOfCompletion { get; set; }
+
+        public string DateComment { get; set; }
     }
 }

@@ -34,6 +34,7 @@
                 return false;
             }
             swal("Task Recorded!", "Kindly come back on or before " + hourlyTime + " " + "hours to close this pending task", "success");
+            //document.getElementById("sa-success").submit();
         });
 
         //Warning Message

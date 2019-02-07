@@ -31,37 +31,71 @@ namespace Hundo_P.Controllers
 
             List<DailyExecVM> dailyExecVMs = ConvertToViewModels(userDailyProfile);
 
-            List<string> results = new List<string>();
-
-            results = GetDateResults(userDailyProfile);
-         
+            var results = GetDateResults(dailyExecVMs);         
             
-            return View(userDailyProfile);
+            return View(results);
         }
 
         private List<DailyExecVM> ConvertToViewModels(IEnumerable<DailyExecModel> userDailyProfile)
         {
-            throw new NotImplementedException();
-        }
+            if (userDailyProfile == null)
+                return new List<DailyExecVM>();
 
-        private List<string> GetDateResults(IEnumerable<DailyExecModel> userDailyProfile)
-        {
-            List<string> results = new List<String>();
+            List<DailyExecVM> execDTO = new List<DailyExecVM>();
             foreach (var item in userDailyProfile)
             {
-                //compare the prev and current date
-                var result = DateTime.Compare(item.DateCreated, DateTime.Now);
-                //}
-                if (result < 0)
-                    results.Add("is earlier than");
-                else if (result == 0)
-                    relationship = "is the same time as";
-                else
-                    relationship = "is later than";
+                execDTO.Add(new DailyExecVM
+                {
+                    DailySummary = item.DailySummary,
+                    DailyExecModelId = item.DailyExecModelId,
+                    DailyTheme = item.DailyTheme,
+                    ProductivityInPercent = item.ProductivityInPercent,
+                    TimeSpent = item.TimeSpent,
+                    DayOfTheWeek = item.DayOfTheWeek,
+                    DateCreated = item.DateCreated,
+                    PointStoredDaily = item.PointStoredDaily,
+                    FinalComment =item.FinalComment,
+                    TimeOfCompletion =item.TimeOfCompletion
+                });               
             }
+            return execDTO;
+        }
 
-            return results;
+        private IEnumerable<DailyExecVM> GetDateResults(IEnumerable<DailyExecVM> userDailyProfile)
+        {
+            List<string> results = new List<String>();
 
+            try
+            {
+                foreach (var item in userDailyProfile)
+                {
+                    //compare the prev and current date
+                    var finishingDate = AddRemainingDateEnding(item.DateCreated, item.TimeSpent);
+
+                    var result = DateTime.Compare(DateTime.Now, item.DateCreated);
+                    //}
+                    if (result < 0)
+                        item.DateComment = "You're early!";
+                    else if (result == 0)
+                        item.DateComment = "Right on time";
+                    else
+                        item.DateComment = "Oops, you're late!";
+                }
+                return userDailyProfile;
+            }
+            catch (Exception ex)
+            {
+                return new List<DailyExecVM>();
+            }
+           
+        }
+
+        private DateTime AddRemainingDateEnding(DateTime dateCreated, string timeSpent)
+        {
+            if (string.IsNullOrEmpty(timeSpent))
+                return dateCreated;
+            var hoursAdded = Convert.ToInt32(timeSpent.Substring(0, 1));
+            return dateCreated.AddHours(hoursAdded);          
         }
 
         public ActionResult FinalPage_3()
