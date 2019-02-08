@@ -27,7 +27,7 @@ namespace Hundo_P.Controllers
  
             //Temporal means of getting User id instead of Session in the Login page
             string userId = User.Identity.GetUserId();
-            IEnumerable<DailyExecModel> userDailyProfile = db.DailyExecModels.Where(app => app.ApplicationUser_Id == userId).AsEnumerable();
+            IEnumerable<DailyExecModel> userDailyProfile = db.DailyExecModels.Where(app => app.ApplicationUser_Id == userId).AsEnumerable().OrderByDescending(x => x.DateCreated);
 
             List<DailyExecVM> dailyExecVMs = ConvertToViewModels(userDailyProfile);
 
@@ -71,9 +71,10 @@ namespace Hundo_P.Controllers
                 {
                     //compare the prev and current date
                     var finishingDate = AddRemainingDateEnding(item.DateCreated, item.TimeSpent);
+                    item.DurationDifferences = finishingDate;
 
-                    var result = DateTime.Compare(DateTime.Now, item.DateCreated);
-                    //}
+                    int result = DateTime.Compare(DateTime.Now, finishingDate);
+                    
                     if (result < 0)
                         item.DateComment = "You're early!";
                     else if (result == 0)
@@ -81,6 +82,7 @@ namespace Hundo_P.Controllers
                     else
                         item.DateComment = "Oops, you're late!";
                 }
+
                 return userDailyProfile;
             }
             catch (Exception ex)

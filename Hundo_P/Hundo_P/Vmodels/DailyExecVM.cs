@@ -28,5 +28,7 @@ namespace Hundo_P.Vmodels
         public DateTime? TimeOfCompletion { get; set; }
 
         public string DateComment { get; set; }
+
+        public DateTime? DurationDifferences { get; set; }
     }
 }

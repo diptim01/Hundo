@@ -65,10 +65,10 @@
                         <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
                             <li class="list-group-item" data-role="task">
                                 <div class="checkbox checkbox-info">
-                                    <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-id="@item.DailyExecModelId" data-summary="@item.DailyTheme">
+                                    <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-id="@item.DailyExecModelId" data-summary="@item.DailyTheme" data-durationtimeframe="@item.DurationDifferences.GetValueOrDefault()">
                                     <label for="@item.DailyExecModelId" class="toremove"> <span>@item.DailyTheme</span> <span class="label label-danger">@item.DateComment</span> </label>
                                 </div>
-                                <div class="item-date">@item.DateCreated.ToShortDateString()</div>
+                                <div class="item-date">@item.DateCreated.ToShortDateString() [<span style="color:blue; font-weight:900">@DateTime.Now.ToString("HH:mm:ss") </span> - <span style="color:red; font-weight:900" id="timing"> </span>]</div> 
                             </li>
 
 
@@ -154,8 +154,31 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            
+            var timeframe = $(this).data('durationtimeframe');
+            console.log(timeframe);
+            var countDown = new Date(timeframe).getTime();
 
+            var x = setInterval(function () {
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                var distance = countDown - now;
+
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("timing").innerHTML = hours + "h "
+                    + minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timing").innerHTML = "EXPIRED";
+                }
+
+            }, 1000);
+
+            console.log(timeframe);
             $(".getTicked").change(function () { // on change of state
                 //data-summary
                 var summarytask = $(this).data('summary');      
