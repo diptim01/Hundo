@@ -200,6 +200,7 @@ namespace Hundo_P.Controllers
         public JsonResult NewChart2()
         {
             List<object> iData = new List<object>();
+
             //Creating sample data  
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -212,7 +213,9 @@ namespace Hundo_P.Controllers
             dr0["Performance Scale"] = 0;
             dt.Rows.Add(dr0);
 
-            DateTime dateTime = new DateTime(2018, 09, 16);
+
+
+            DateTime dateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 01);
             for (int i = 0; i < 8; i++)
             {
 
