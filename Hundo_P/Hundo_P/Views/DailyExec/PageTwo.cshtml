@@ -18,7 +18,7 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                
+
                 <h4 class="card-title">To Do list</h4>
                 <h6 class="card-subtitle">List of your next task to complete</h6>
                 <!-- ============================================================== -->
@@ -37,7 +37,7 @@
                                     <div class="modal-body">
 
                                         <p>Good Work! You completed the task for the day. Kindly take  a few seconds to write how the experience was like for you.</p>
-                                        <div> <input hidden name="id" id="uniqueId" value="uniqueId"/></div>
+                                        <div> <input hidden name="id" id="uniqueId" value="uniqueId" /></div>
                                         <div class="form-group">
                                             <label>Task name</label>
                                             <input type="text" class="form-control" id="summaryname" disabled placeholder="Enter Task Name">
@@ -63,12 +63,12 @@
                     @foreach (var item in Model.OrderByDescending(x => x.DateCreated))
                     {
                         <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
-                            <li class="list-group-item" data-role="task">
+                            <li class="list-group-item taskwrapper" data-role="task">
                                 <div class="checkbox checkbox-info">
-                                    <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-id="@item.DailyExecModelId" data-summary="@item.DailyTheme" data-durationtimeframe="@item.DurationDifferences.GetValueOrDefault()">
+                                    <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-id="@item.DailyExecModelId" data-summary="@item.DailyTheme" data-mytime="@item.TimeOfCompletion">
                                     <label for="@item.DailyExecModelId" class="toremove"> <span>@item.DailyTheme</span> <span class="label label-danger">@item.DateComment</span> </label>
                                 </div>
-                                <div class="item-date">@item.DateCreated.ToShortDateString() [<span style="color:blue; font-weight:900">@DateTime.Now.ToString("HH:mm:ss") </span> - <span style="color:red; font-weight:900" id="timing"> </span>]</div> 
+                                <div class="item-date">@item.DateCreated.ToShortDateString() [<span style="color:blue; font-weight:900">@DateTime.Now.ToString("HH:mm:ss") </span> - <span style="color:red; font-weight:900" id="timing" class="expiry"> </span>]</div>
                             </li>
 
 
@@ -154,34 +154,50 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            var timeframe = $(this).data('durationtimeframe');
-            console.log(timeframe);
-            var countDown = new Date(timeframe).getTime();
-            //
-            var x = setInterval(function () {
-                // Get todays date and time
-                var now = new Date().getTime();
+            // var inputs = document.querySelectorAll('input.getTicked');//document.getElementsByTagName('input');
+            var inputs = document.querySelectorAll('.taskwrapper');
 
-                var distance = countDown - now;
+            for (var i = 0; i < inputs.length; i++) {
 
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                (function (i) {
+                    var tickedItem = inputs[i].getElementsByClassName('getTicked');
+                    var y = tickedItem[0].dataset === null || tickedItem[0].dataset.mytime === null ? "" : tickedItem[0].dataset.mytime;
+                 
+                    var countDownTime;
 
-                document.getElementById("timing").innerHTML = hours + "h "
-                    + minutes + "m " + seconds + "s ";
+                    if (y === null || y === "") { countDownTime = -100; }
+                    else { countDownTime = new Date(y).getTime(); }
+              
+                    var x = setInterval(function () {
+                        // Get todays date and time
+                        var now = new Date().getTime();
 
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("timing").innerHTML = "EXPIRED";
-                }
+                      
+                        // countdown first because it will be higher than the dateTime now ....I added the remaiining time of completion with the day it was created .. 
+                        var distance = countDownTime - now;
 
-            }, 1000);
+                        if (distance < 0) { // if negative
+                            clearInterval(x); // clear all interval
+                            console.log("j", inputs[i].getElementsByClassName('item-date'));
+                            inputs[i].getElementsByClassName('item-date')[0].lastElementChild.innerHTML = "EXPIRED";
 
-            console.log(timeframe);
+                        }
+                        else {
+                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                            inputs[i].getElementsByClassName('item-date')[0].lastElementChild.innerHTML = hours + "h "
+                                + minutes + "m " + seconds + "s ";
+                        }
+
+                    }, 1000);
+                })(i);
+            }
+
             $(".getTicked").change(function () { // on change of state
                 //data-summary
-                var summarytask = $(this).data('summary');      
+                var summarytask = $(this).data('summary');
                 var uniqueId = $(this).data('id');
 
                 $('#uniqueId').val(uniqueId);

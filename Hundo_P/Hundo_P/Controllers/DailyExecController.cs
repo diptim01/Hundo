@@ -72,8 +72,10 @@ namespace Hundo_P.Controllers
                     //compare the prev and current date
                     var finishingDate = AddRemainingDateEnding(item.DateCreated, item.TimeSpent);
 
+                    item.TimeOfCompletion = finishingDate;
+
                     var result = DateTime.Compare(DateTime.Now, item.DateCreated);
-                    //}
+                    
                     if (result < 0)
                         item.DateComment = "You're early!";
                     else if (result == 0)
