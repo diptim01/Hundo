@@ -74,7 +74,7 @@ namespace Hundo_P.Controllers
 
                     item.TimeOfCompletion = finishingDate;
 
-                    var result = DateTime.Compare(DateTime.Now, item.DateCreated);
+                    var result = DateTime.Compare(DateTime.Now, finishingDate);
                     
                     if (result < 0)
                         item.DateComment = "You're early!";
