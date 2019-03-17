@@ -29,54 +29,63 @@
         });
     </script>*@
 <br /> <br />
+<div> <input type="date" class="form-control" id="dateanalysis" />
+<button type="submit" class="btn btn-primary" id="formSubmission" style="display:inline-block; margin-left:10px;">Analyse!</button>
+  </div>
+<br />
 <canvas id="myChart"></canvas>
 
 <script type="text/javascript">
-    if (confirm("Do you want to see the weekly analysis?")) {
-        $.ajax({
-            type: "POST",
-            url: "/DailyExec/NewChart2",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (chData) {              
-                var aData = chData;
-                var aLabels = aData[0];
-                var aDatasets1 = aData[1];
-                var dataT = {
-                    labels: aLabels,
-                    datasets: [
-                        {
-                            label: "Feed Me Daily Records(Hundo P Inc)",
-                            data: aDatasets1,
-                            fill: false,
-                            backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
-                            borderColor: ['rgba(255,99,132,1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(255, 206, 86, 1)',
-                                        'rgba(75, 192, 192, 1)',
-                                        'rgba(153, 102, 255, 1)',
-                                        'rgba(255, 159, 64, 1)'],
-                            borderWidth: 2
+
+    $("#formSubmission").click(function () {
+        if (confirm("Do you want to see the weekly analysis?")) {
+            var getDate = $("#dateanalysis").val();
+            $.ajax({
+                type: "POST",
+                url: "/DailyExec/NewChart2",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ dateSelected: getDate}),
+                dataType: "json",
+                success: function (chData) {
+                    var aData = chData;
+                    var aLabels = aData[0];
+                    var aDatasets1 = aData[1];
+                    var dataT = {
+                        labels: aLabels,
+                        datasets: [
+                            {
+                                label: "Feed Me Daily Records(Hundo P Inc)",
+                                data: aDatasets1,
+                                fill: false,
+                                backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                                borderColor: ['rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'],
+                                borderWidth: 2
+                            }
+                        ]
+                    };
+                    var ctx = $("#myChart").get(0).getContext("2d");
+                    var myNewChart = new Chart(ctx, {
+                        type: 'line',
+                        data: dataT,
+                        options: {
+                            responsive: true,
+                            title: { display: true, text: 'Hundo P' },
+                            legend: { position: 'bottom' },
+                            scales: {
+                                xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                                yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                            },
                         }
-                    ]
-                };
-                var ctx = $("#myChart").get(0).getContext("2d");
-                var myNewChart = new Chart(ctx, {
-                    type: 'line',
-                    data: dataT,
-                    options: {
-                        responsive: true,
-                        title: { display: true, text: 'Hundo P' },
-                        legend: { position: 'bottom' },
-                        scales: {
-                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
-                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
-                        },
-                    }
-                });
-            }
-        });
-    }
+                    });
+                }
+            });
+        }
+    });
 </script>
 <h2>NewChart</h2>
 

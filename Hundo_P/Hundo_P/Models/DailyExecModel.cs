@@ -92,6 +92,7 @@ namespace Hundo_P.Models
                     if (dayCount == check && days.PointStoredDaily == 0) { pointAdded += 10; }
                     else
                     {
+                        //computation error.. work on the algo.
                         pointAdded += 20;
                     }
 

@@ -24,15 +24,15 @@ namespace Hundo_P.Controllers
         public ActionResult PageTwo()
         {
             //check the date         
- 
+
             //Temporal means of getting User id instead of Session in the Login page
             string userId = User.Identity.GetUserId();
             IEnumerable<DailyExecModel> userDailyProfile = db.DailyExecModels.Where(app => app.ApplicationUser_Id == userId).AsEnumerable();
 
             List<DailyExecVM> dailyExecVMs = ConvertToViewModels(userDailyProfile);
 
-            var results = GetDateResults(dailyExecVMs);         
-            
+            IEnumerable<DailyExecVM> results = GetDateResults(dailyExecVMs);
+
             return View(results);
         }
 
@@ -42,7 +42,7 @@ namespace Hundo_P.Controllers
                 return new List<DailyExecVM>();
 
             List<DailyExecVM> execDTO = new List<DailyExecVM>();
-            foreach (var item in userDailyProfile)
+            foreach (DailyExecModel item in userDailyProfile)
             {
                 execDTO.Add(new DailyExecVM
                 {
@@ -54,9 +54,9 @@ namespace Hundo_P.Controllers
                     DayOfTheWeek = item.DayOfTheWeek,
                     DateCreated = item.DateCreated,
                     PointStoredDaily = item.PointStoredDaily,
-                    FinalComment =item.FinalComment,
-                    TimeOfCompletion =item.TimeOfCompletion
-                });               
+                    FinalComment = item.FinalComment,
+                    TimeOfCompletion = item.TimeOfCompletion
+                });
             }
             return execDTO;
         }
@@ -67,15 +67,15 @@ namespace Hundo_P.Controllers
 
             try
             {
-                foreach (var item in userDailyProfile)
+                foreach (DailyExecVM item in userDailyProfile)
                 {
                     //compare the prev and current date
-                    var finishingDate = AddRemainingDateEnding(item.DateCreated, item.TimeSpent);
+                    DateTime finishingDate = AddRemainingDateEnding(item.DateCreated, item.TimeSpent);
 
                     item.TimeOfCompletion = finishingDate;
 
-                    var result = DateTime.Compare(DateTime.Now, finishingDate);
-                    
+                    int result = DateTime.Compare(DateTime.Now, finishingDate);
+
                     if (result < 0)
                         item.DateComment = "You're early!";
                     else if (result == 0)
@@ -89,15 +89,15 @@ namespace Hundo_P.Controllers
             {
                 return new List<DailyExecVM>();
             }
-           
+
         }
 
         private DateTime AddRemainingDateEnding(DateTime dateCreated, string timeSpent)
         {
             if (string.IsNullOrEmpty(timeSpent))
                 return dateCreated;
-            var hoursAdded = Convert.ToInt32(timeSpent.Substring(0, 1));
-            return dateCreated.AddHours(hoursAdded);          
+            int hoursAdded = Convert.ToInt32(timeSpent.Substring(0, 1));
+            return dateCreated.AddHours(hoursAdded);
         }
 
         public ActionResult FinalPage_3()
@@ -146,7 +146,7 @@ namespace Hundo_P.Controllers
                 dailyExecModel.PointStoredDaily = dailyExecModel.GetStoredDailyPoints(dailyExecModel.DateCreated);
 
                 dailyExecModel.DayOfTheWeek = DateTime.Now.DayOfWeek.ToString();
-                
+
                 dailyExecModel.ApplicationUser_Id = User.Identity.GetUserId();
 
                 db.DailyExecModels.Add(dailyExecModel);
@@ -182,13 +182,6 @@ namespace Hundo_P.Controllers
             return View();
         }
 
-        // GET: DailyExec/GenerateReport
-        [HttpPost]
-        public ActionResult GenerateReport(int id)
-        {
-            return View();
-        }
-
 
         public ActionResult NewChart()
         {
@@ -197,11 +190,11 @@ namespace Hundo_P.Controllers
 
 
         [HttpPost]
-        public JsonResult NewChart2()
+        public JsonResult NewChart2(string dateSelected)
         {
             List<object> iData = new List<object>();
 
-            //Creating sample data  
+            //Creating sample data  - refactor later
             ApplicationDbContext db = new ApplicationDbContext();
 
             DataTable dt = new DataTable();
@@ -213,23 +206,62 @@ namespace Hundo_P.Controllers
             dr0["Performance Scale"] = 0;
             dt.Rows.Add(dr0);
 
+            // divide  weekly dates in a month into range i.e 1-7 would be 1 week and 8-15 will be week 2. so whatever date picked, check the range and spool records for that particluar records
 
+            DateTime enteredDate = DateTime.Parse(dateSelected);
 
-            DateTime dateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 01);
-            for (int i = 0; i < 8; i++)
+            DateTime dateTime = new DateTime(enteredDate.Year, enteredDate.Month, enteredDate.Day);
+
+            int counter = 0;
+            if (dateTime.Day >= 0 && dateTime.Day <= 7)
             {
-
-                DateTime time = dateTime.AddDays(i);
-                DailyExecModel model = db.DailyExecModels.Where(x => DbFunctions.TruncateTime(x.DateCreated) == time).FirstOrDefault();
-                if (model != null)
-                {
-                    DataRow dr = dt.NewRow();
-                    dr["Days of the Week"] = model.DayOfTheWeek;
-                    dr["Performance Scale"] = model.PointStoredDaily;
-                    dt.Rows.Add(dr);
-                }
-
+                //week one
+                //counter starts at 0;
+                counter = 0;
             }
+            if (dateTime.Day >= 8 && dateTime.Day <= 15)
+            {
+                //week two
+                //counter starts at 8;
+                counter = 8;
+            }
+            if (dateTime.Day >= 16 && dateTime.Day <= 23)
+            {
+                //week two
+                //counter starts at 16;
+                counter = 16;
+            }
+
+            if (dateTime.Day >= 24 && dateTime.Day <= 33)
+            {
+                //week one
+                //counter starts at 24;
+                counter = 24;
+            }
+
+            int limiter = counter + 7;
+
+            for (int i = counter; i < limiter; i++)
+                {
+
+                    DateTime time = dateTime.AddDays(i);
+                    DailyExecModel model = db.DailyExecModels.Where(x => DbFunctions.TruncateTime(x.DateCreated) == time).FirstOrDefault();
+                    if (model != null)
+                    {
+                        DataRow dr = dt.NewRow();
+                        dr["Days of the Week"] = model.DayOfTheWeek;
+                        dr["Performance Scale"] = model.PointStoredDaily;
+                        dt.Rows.Add(dr);
+                    }
+                    else
+                    {
+                        DataRow dr = dt.NewRow();
+                        dr["Days of the Week"] = time.DayOfWeek;
+                        dr["Performance Scale"] = 0;
+                        dt.Rows.Add(dr);
+                    }
+
+                }
 
 
 
@@ -242,41 +274,6 @@ namespace Hundo_P.Controllers
             //Source data returned as JSON  
             return Json(iData, JsonRequestBehavior.AllowGet);
         }
-
-
-        //[HttpPost]
-        //public JsonResult NewChart2()
-        //{
-        //    List<object> iData = new List<object>();
-        //    //Creating sample data  
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("Employee");
-        //    dt.Columns.Add("Credit");
-
-        //    DataRow dr = dt.NewRow();
-        //    dr["Employee"] = "Sam";
-        //    dr["Credit"] = 123;
-        //    dt.Rows.Add(dr);
-
-        //    dr = dt.NewRow();
-        //    dr["Employee"] = "Alex";
-        //    dr["Credit"] = 456;
-        //    dt.Rows.Add(dr);
-
-        //    dr = dt.NewRow();
-        //    dr["Employee"] = "Michael";
-        //    dr["Credit"] = 587;
-        //    dt.Rows.Add(dr);
-        //    //Looping and extracting each DataColumn to List<Object>  
-        //    foreach (DataColumn dc in dt.Columns)
-        //    {
-        //        List<object> x = new List<object>();
-        //        x = (from DataRow drr in dt.Rows select drr[dc.ColumnName]).ToList();
-        //        iData.Add(x);
-        //    }
-        //    //Source data returned as JSON  
-        //    return Json(iData, JsonRequestBehavior.AllowGet);
-        //}
 
 
         public ActionResult TestChart()

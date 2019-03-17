@@ -68,7 +68,7 @@
                                     <input type="checkbox" id="@item.DailyExecModelId" class="getTicked" name="inputCheckboxesCall" data-id="@item.DailyExecModelId" data-summary="@item.DailyTheme" data-mytime="@item.TimeOfCompletion">
                                     <label for="@item.DailyExecModelId" class="toremove"> <span>@item.DailyTheme</span> <span class="label label-danger">@item.DateComment</span> </label>
                                 </div>
-                                <div class="item-date">@item.DateCreated.ToShortDateString() [<span style="color:blue; font-weight:900">@DateTime.Now.ToString("HH:mm:ss") </span> - <span style="color:red; font-weight:900" id="timing" class="expiry"> </span>]</div>
+                                <div class="item-date">@item.DateCreated.ToShortDateString() [<span style="color:blue; font-weight:900">@item.DateCreated.ToString("HH:mm:ss") </span> - <span style="color:red; font-weight:900" id="timing" class="expiry"> </span>]</div>
                             </li>
 
 
