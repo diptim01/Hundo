@@ -61,11 +61,11 @@ namespace Hundo_P
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "949698859318-i94lfmreckqpji1usuehpvu7pi0bp54h.apps.googleusercontent.com",
+                ClientSecret = "pJoCGutDsxlglu5TkVPbz7oq"
+            });
         }
     }
 }

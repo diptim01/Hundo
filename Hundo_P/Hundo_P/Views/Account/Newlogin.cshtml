@@ -82,7 +82,9 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
                             <div class="social">
                                 <button class="btn btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fab fa-facebook-f"></i> </button>
-                                <button class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fab fa-google-plus-g"></i> </button>
+                                
+                                @*Login with Google*@
+                                <button class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google" id="btnGoogleLogin"> <i aria-hidden="true" class="fab fa-google-plus-g"></i> </button>
                             </div>
                         </div>
                     </div>
@@ -138,6 +140,14 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="~/Content/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnGoogleLogin").click(function () {
+                window.location.href = "/Account/ExternalLogin";
+            });
+        });
+    </script>
 </body>
 
 </html>

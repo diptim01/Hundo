@@ -656,6 +656,7 @@
     <Content Include="Content\assets\plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\LayoutDashboard.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\colors\blue.css" />
     <Content Include="Content\css\icons\flag-icon-css\flag-icon.min.css" />
@@ -1056,6 +1057,7 @@
     <Content Include="Scripts\regscript.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\navbarLayout.js" />
     <Content Include="Scripts\typedminjs.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
@@ -1103,6 +1105,8 @@
     <Content Include="Views\DailyExec\PageTwo.cshtml" />
     <Content Include="Views\DailyExec\FinalPage_3.cshtml" />
     <Content Include="Views\Account\NewReg.cshtml" />
+    <Content Include="Views\Shared\_LayoutDashboard.cshtml" />
+    <Content Include="Views\Home\Index - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

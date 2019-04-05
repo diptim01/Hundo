@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Hundo_P
 {
@@ -23,10 +22,31 @@ namespace Hundo_P
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/newLayout").Include(
+                "~/Content/assets/plugins/jquery/jquery.min.js",
+                "~/Content/assets/plugins/bootstrap/js/bootstrap.min.js",
+                "~/Content/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js",
+                "~/Content/assets/plugins/sparkline/jquery.sparkline.min.js",
+               "~/Scripts/js/custom.min.js",
+               "~/Scripts/js/jasny-bootstrap.js",
+                "~/Content/assets/plugins/sweetalert/sweetalert.min.js",
+                "~/Content/assets/plugins/sweetalert/jquery.sweet-alert.custom.js"
+
+                ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/css/style.css",
                       "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/newLayoutcss").Include(
+
+                     "~/Content/assets/plugins/bootstrap/css/bootstrap.min.css", 
+                     "~/Content/assets/plugins/sweetalert/sweetalert.css",
+                         "~/Content/css/style.css",             
+
+                     "~/Content/css/colors/blue.css"
+                    ));
         }
     }
 }
